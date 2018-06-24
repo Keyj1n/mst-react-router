@@ -37,4 +37,8 @@ export const RouterModel = types
         history.block(...arguments);
       }
     };
+  })
+  .preProcessSnapshot(snapshot => {
+    snapshot.replace(snapshot.location)
+    return snapshot;
   });
